@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Bw Surco Demo';
+  src: url('./assets/fonts/BwSurcoDEMO-BlackItalic.otf');
+}
+
+@font-face {
+  font-family: 'Arsenica Trial';
+  src: url('./assets/fonts/ArsenicaTrial-Bold.ttf');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
