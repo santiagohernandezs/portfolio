@@ -2,7 +2,6 @@ import {
   aria,
   beemo,
   chart,
-  cligth,
   coffee,
   discord,
   figma,
@@ -17,6 +16,7 @@ import Mail from '@components/icons/Mail'
 import Twitter from '@components/icons/Twitter'
 import { Bubble, Header, Rounded, SocialButton, Stat } from '@components/index'
 import { lazy, useEffect, useState } from 'react'
+import Chevron from './components/icons/Chevron'
 const Section = lazy(() => import('@components/Section'))
 interface IData {
   public_repos: number
@@ -83,13 +83,7 @@ export default function App(): JSX.Element {
 
         <div className='flex justify-center items-center flex-col gap-4 '>
           <Rounded />
-          <img
-            src={cligth}
-            alt='chevron'
-            width={40}
-            height={40}
-            className='animate-goDown'
-          />
+          <Chevron width={35} height={35} viewBox='0 0 35 39' fill='#232323' />
         </div>
       </Section>
 
