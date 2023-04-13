@@ -7,6 +7,7 @@ type BubbleProps = {
   link: string
   primary?: boolean
   rstart: number
+  position: 'left' | 'right'
 }
 
 export default function Bubble({
@@ -15,7 +16,8 @@ export default function Bubble({
   alt,
   link,
   primary,
-  rstart
+  rstart,
+  position
 }: BubbleProps): JSX.Element {
   const [imageWidth, setImageWidth] = useState(50)
   return (
@@ -29,7 +31,11 @@ export default function Bubble({
         <img
           onMouseEnter={() => setImageWidth(60)}
           onMouseLeave={() => setImageWidth(50)}
-          className='absolute -bottom-1 -right-5 rotate-12 transition-all 1s ease-in-out '
+          className={`absolute  transition-all 1s ease-in-out ${
+            position === 'left'
+              ? '-bottom-1 -left-6 rotate-[-12deg]'
+              : '-bottom-1 -right-6 rotate-12'
+          } `}
           src={icon}
           alt={alt}
           width={imageWidth}
