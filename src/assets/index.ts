@@ -1,7 +1,6 @@
 import aria from './aria.svg';
 import beemo from './beemo.svg';
 import chart from './chart.svg';
-import cligth from './chevron-light.png';
 import coffee from './coffee.svg';
 import discord from './discord.svg';
 import figma from './figma.svg';
@@ -14,5 +13,5 @@ import turtle from './shell.svg';
 import tao from './tao.svg';
 
 
-export { tao, rounded, cligth, hand, discord, figma, rocket, beemo, lua, aria, coffee, turtle, pockeball, chart };
+export { tao, rounded, hand, discord, figma, rocket, beemo, lua, aria, coffee, turtle, pockeball, chart };
 
