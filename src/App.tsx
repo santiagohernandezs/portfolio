@@ -14,10 +14,9 @@ import {
 import Github from '@components/icons/Github'
 import Mail from '@components/icons/Mail'
 import Twitter from '@components/icons/Twitter'
-import { Bubble, Header, Rounded, SocialButton, Stat } from '@components/index'
-import { lazy, useEffect, useState } from 'react'
+import { Bubble, Header, Rounded, Section, SocialButton, Stat } from '@components/index'
+import { useEffect, useState } from 'react'
 import Chevron from './components/icons/Chevron'
-const Section = lazy(() => import('@components/Section'))
 interface IData {
   public_repos: number
   company: string
@@ -87,9 +86,7 @@ export default function App(): JSX.Element {
         </div>
       </Section>
 
-      {/* le falta un padding vertical -> py8 */}
-
-      <Section bgColor='blue/primary' gap={10} minHeight={50}>
+      <Section bgColor='blue/primary' gap={10}>
         <Header text='About Me' color='white' icon={hand} alt='hand' />
         <div className='grid -1 -2 tablet:grid-cols-3 tablet:grid-rows-2 gap-6 w-10/12  tablet:w-2/4'>
           <Bubble
@@ -99,16 +96,18 @@ export default function App(): JSX.Element {
             link='https://www.figma.com/@santiagohernand'
             rstart={1}
             primary
+            position='left'
           />
           <Bubble
             link='https://discordapp.com/users/467156285327147018'
             icon={discord}
             alt='discord'
             text='If it’s related to code, I might like it. You can add me on Discord if you want to talk anything code related.'
-            // width={50}
             rstart={2}
+            position='right'
           />
         </div>
+        <Header color='white' text='My Tools' alt='gear' icon='' />
       </Section>
 
       <Section bgColor='white/primary' gap={4} minHeight={'auto'}>
