@@ -107,7 +107,6 @@ export default function App(): JSX.Element {
             position='right'
           />
         </div>
-        <Header color='white' text='My Tools' alt='gear' icon='' />
       </Section>
 
       <Section bgColor='white/primary' gap={4} minHeight={'auto'}>
