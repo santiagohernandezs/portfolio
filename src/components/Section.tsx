@@ -14,7 +14,7 @@ export default function Section({
   return (
     <section
       className={`flex justify-center items-center flex-col py-8 bg-${bgColor} ${
-        minHeight ? `min-h-[${minHeight}]` : 'min-h-screen'
+        minHeight ? `min-h-[${minHeight}vh]` : 'min-h-screen'
       } ${gap ? `gap-${gap}` : 'gap-16'}`}>
       {children}
     </section>
