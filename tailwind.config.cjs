@@ -20,7 +20,8 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 30s linear infinite reverse',
         appear: 'appear .3s ease-in-out',
-        desappear: 'desappear .3s ease-in-out'
+        desappear: 'desappear .3s ease-in-out',
+        goDown: 'goDown 1s ease-in-out infinite alternate'
       },
       screens: {
         smallPhone: '320px',
@@ -41,6 +42,10 @@ module.exports = {
         desappear: {
           '0%': { opacity: 1, transform: 'translateY(0)' },
           '100%': { opacity: 0, transform: 'translateY(5px)' }
+        },
+        goDown: {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(10px)' }
         }
       }
     }

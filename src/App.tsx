@@ -6,19 +6,18 @@ import {
   coffee,
   discord,
   figma,
-  glight,
   hand,
-  mlight,
   pockeball,
   rocket,
   tao,
-  tlight,
   turtle
 } from '@assets/index'
+import Github from '@components/icons/Github'
+import Mail from '@components/icons/Mail'
+import Twitter from '@components/icons/Twitter'
 import { Bubble, Header, Rounded, SocialButton, Stat } from '@components/index'
 import { lazy, useEffect, useState } from 'react'
 const Section = lazy(() => import('@components/Section'))
-
 interface IData {
   public_repos: number
   company: string
@@ -57,28 +56,40 @@ export default function App(): JSX.Element {
               <span className='text-blue/primary font-semibold'>code</span>
             </span>
           </div>
-          <div className='flex justify-center gap-5 bigPhone:gap-10 w-full h-auto '>
+          <div className='flex justify-center gap-1 smallPhone:gap-5 tablet:gap-10 w-full h-auto '>
             <SocialButton
-              image={glight}
               alt={'github'}
               route={'https://github.com/santiagohernandezs'}
-            />
+              text
+              viweBox='0 0 57 55'>
+              <Github />
+            </SocialButton>
             <SocialButton
-              image={mlight}
               alt={'mail'}
               route={'mailto:santiagooheernandez@gmail.com'}
-            />
+              viweBox='0 0 59 43'
+              text>
+              <Mail />
+            </SocialButton>
             <SocialButton
-              image={tlight}
               alt={'twitter'}
               route={'https://twitter.com/SuperDuperTao'}
-            />
+              text
+              viweBox='0 0 47 39'>
+              <Twitter />
+            </SocialButton>
           </div>
         </div>
 
         <div className='flex justify-center items-center flex-col gap-4 '>
           <Rounded />
-          <img src={cligth} alt='chevron' width={40} height={40} />
+          <img
+            src={cligth}
+            alt='chevron'
+            width={40}
+            height={40}
+            className='animate-goDown'
+          />
         </div>
       </Section>
 
