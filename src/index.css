@@ -12,6 +12,12 @@
   src: url('./assets/fonts/ArsenicaTrial-Bold.ttf');
 }
 
+.my-atropos {
+  width: 300px;
+  height: auto;
+  transform: rotate(-45deg);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
