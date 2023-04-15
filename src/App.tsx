@@ -11,31 +11,24 @@ import {
   tao,
   turtle
 } from '@assets/index'
-import Github from '@components/icons/Github'
-import Mail from '@components/icons/Mail'
-import Twitter from '@components/icons/Twitter'
+import { Chevron, Github, Mail, Twitter } from '@components/icons/index'
 import { Bubble, Header, Rounded, Section, SocialButton, Stat } from '@components/index'
+import { githubCommits, githubRepos } from '@interceptors/index'
+import githubRequest from '@models/githubRequest.model'
 import { useEffect, useState } from 'react'
-import Chevron from './components/icons/Chevron'
-interface IData {
-  public_repos: number
-  company: string
-}
 
 export default function App(): JSX.Element {
-  const [data, setData] = useState<IData>({ public_repos: 0, company: '' })
+  const [repos, setRepos] = useState<githubRequest>({ value: 0 })
+  const [commits, setCommits] = useState<githubRequest>({ value: 0 })
+
   useEffect(() => {
-    fetch('https://api.github.com/users/santiagohernandezs', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28'
-      }
+    githubRepos().then(data => {
+      setRepos(data)
     })
-      .then(response => response.json())
-      .then(data => {
-        setData(data)
-      })
+
+    githubCommits().then(data => {
+      setCommits(data)
+    })
   }, [])
 
   return (
@@ -176,10 +169,14 @@ export default function App(): JSX.Element {
         <div className='flex items-center justify-center gap-10  tablet:gap-32 w-11/12'>
           <Stat
             variable='repos'
-            value={data?.public_repos}
-            text='Actualmente tiene 20 repositorios en Github'
+            value={repos?.value}
+            text={`Actualmente tiene ${repos?.value} repositorios en Github.`}
           />
-          <Stat variable='commits' value={301} text='301 commits, hasta la fecha' />
+          <Stat
+            variable='commits'
+            value={commits?.value}
+            text={`${commits?.value} commits, hasta la fecha.`}
+          />
         </div>
         <span className='font-montserrat font-medium text-gray/primary text-sm'>
           From GitHub.com with GitHub API
