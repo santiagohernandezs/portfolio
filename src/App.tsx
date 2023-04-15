@@ -11,10 +11,11 @@ import {
   tao,
   turtle
 } from '@assets/index'
-import { Chevron, Github, Mail, Twitter } from '@components/icons/index'
+import { Chevron, Github, Mail, Ticket, Twitter } from '@components/icons/index'
 import { Bubble, Header, Rounded, Section, SocialButton, Stat } from '@components/index'
 import { githubCommits, githubRepos } from '@interceptors/index'
 import githubRequest from '@models/githubRequest.model'
+import Atropos from 'atropos/react'
 import { useEffect, useState } from 'react'
 
 export default function App(): JSX.Element {
@@ -100,6 +101,11 @@ export default function App(): JSX.Element {
             position='right'
           />
         </div>
+        <Atropos className='my-atropos'>
+          <a href='#'>
+            <Ticket viewBox='0 0 1743 934' width={300} height={160} />
+          </a>
+        </Atropos>
       </Section>
 
       <Section bgColor='white/primary' gap={4} minHeight={'auto'}>
