@@ -21,7 +21,9 @@
       "@components/*": ["src/components/*"],
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@interceptors/*": ["src/interceptors/*"],
+      "@models/*": ["src/models/*"]
     }
   },
   "include": ["src"],

@@ -11,6 +11,8 @@ export default defineConfig({
       '@pages': '/src/pages',
       '@utils': '/src/utils',
       '@assets': '/src/assets',
+      '@interceptors': '/src/interceptors',
+      '@models': '/src/models'
     }
   }
 })
