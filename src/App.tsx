@@ -87,7 +87,7 @@ export default function App(): JSX.Element {
         </div>
       </Section>
 
-      <Section bgColor='blue/primary' gap={10}>
+      <Section bgColor='blue/primary' gap={10} minHeight={30}>
         <Header text='About Me' color='white' icon={hand} alt='hand' />
         <div className='grid -1 -2 tablet:grid-cols-3 tablet:grid-rows-2 gap-6 w-10/12  tablet:w-2/4'>
           <Bubble
