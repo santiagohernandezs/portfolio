@@ -2,7 +2,7 @@ type SectionProps = {
   bgColor: 'blue/primary' | 'white/primary'
   minHeight?: number | string
   gap: number
-  children: JSX.Element[]
+  children: JSX.Element | JSX.Element[]
 }
 
 export default function Section({
