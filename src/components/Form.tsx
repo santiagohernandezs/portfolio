@@ -14,7 +14,7 @@ export default function Form(): JSX.Element {
   return (
     <div className='flex flex-col gap-4 w-10/12 laptop:w-2/6 h-full py-6'>
       <h2 className='text-2xl self-center font-bold text-black/primary hidden laptop:block'>
-        Llena el formulario
+        Fill this form
       </h2>
       <form className='flex flex-col justify-center self-center h-3/4 w-full gap-4 px-6 py-6 bg-white/primary rounded-xl shadow-2xl'>
         <div>

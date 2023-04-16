@@ -196,7 +196,7 @@ export default function App(): JSX.Element {
         <div className='flex items-center justify-center w-10/12 tablet:w-3/4 gap-16 h-[50vh]'>
           <Ticket viewBox='0 0 1743 934' width={290} height={170} />
           <span className='text-black/primary font-bold text-3xl hidden laptop:block'>
-            O
+            Or
           </span>
           <Form />
         </div>
