@@ -13,7 +13,7 @@ export default function Chevron({
   ...props
 }: TicketProps): JSX.Element {
   return (
-    <Atropos className='my-atropos hidden laptop:block'>
+    <Atropos className='my-atropos hidden laptop:block' shadow={false}>
       <a href='https://calendly.com/santiagooheernandez/30min?month=2023-04&date=2023-04-26'>
         <svg
           width={width}
