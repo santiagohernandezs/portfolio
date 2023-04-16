@@ -12,10 +12,17 @@ import {
   turtle
 } from '@assets/index'
 import { Chevron, Github, Mail, Ticket, Twitter } from '@components/icons/index'
-import { Bubble, Header, Rounded, Section, SocialButton, Stat } from '@components/index'
+import {
+  Bubble,
+  Form,
+  Header,
+  Rounded,
+  Section,
+  SocialButton,
+  Stat
+} from '@components/index'
 import { githubCommits, githubRepos } from '@interceptors/index'
 import githubRequest from '@models/githubRequest.model'
-import Atropos from 'atropos/react'
 import { useEffect, useState } from 'react'
 
 export default function App(): JSX.Element {
@@ -101,11 +108,6 @@ export default function App(): JSX.Element {
             position='right'
           />
         </div>
-        <Atropos className='my-atropos'>
-          <a href='#'>
-            <Ticket viewBox='0 0 1743 934' width={300} height={160} />
-          </a>
-        </Atropos>
       </Section>
 
       <Section bgColor='white/primary' gap={4} minHeight={'auto'}>
@@ -187,6 +189,17 @@ export default function App(): JSX.Element {
         <span className='font-montserrat font-medium text-gray/primary text-sm'>
           From GitHub.com with GitHub API
         </span>
+      </Section>
+
+      <Section bgColor='white/primary' gap={4} minHeight={30}>
+        <Header text="Let's Get in Touch" color='black' icon={hand} alt='hand' />
+        <div className='flex items-center justify-center w-10/12 tablet:w-3/4 gap-16 h-96'>
+          <Ticket viewBox='0 0 1743 934' width={290} height={170} />
+          <span className='text-black/primary font-bold text-3xl hidden laptop:block'>
+            O
+          </span>
+          <Form />
+        </div>
       </Section>
 
       <footer className='flex flex-col items-center justify-center min-h-[30vh] p-8 bg-blue/primary'>

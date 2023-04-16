@@ -1,3 +1,4 @@
+export { default as Form } from './Form';
 export { default as Section } from './Section';
 export { default as Stat } from './Stat';
 export { default as Bubble } from './bubble';
