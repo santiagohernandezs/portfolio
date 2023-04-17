@@ -94,10 +94,10 @@ export default function Form(): JSX.Element {
         </div>
         <input
           type='submit'
-          className={`mt-auto cursor-pointer self-center bg-blue/primary ${
+          className={`mt-auto self-center bg-blue/primary ${
             !inputs.name || !inputs.email || !inputs.phone
               ? 'opacity-50 cursor-not-allowed'
-              : null
+              : 'cursor-pointer hover:opacity-80'
           } px-6  rounded-lg py-2 font-semibold text-white/primary transition-all ease-in-out`}
           value={'Send'}
         />
