@@ -1,35 +1,44 @@
 import emailjs from '@emailjs/browser'
-import { useRef } from 'react'
+import { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 
+//asignar a cada propiedad un objeto de tipo {value: string, error: boolean}
+interface inputs {
+  name: string
+  email: string
+  phone: string
+}
+
 export default function Form(): JSX.Element {
-  const formData = useRef() as React.MutableRefObject<HTMLFormElement>
+  const [inputs, setInputs] = useState<inputs>({ name: '', email: '', phone: '' })
 
-  const handleSubmit = (e: any): any => {
+  const handleChange = e => {
+    setInputs({ ...inputs, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = e => {
     e.preventDefault()
-
-    toast.promise(
-      emailjs
-        .sendForm(
+    if (inputs.name && inputs.email && inputs.phone) {
+      toast.promise(
+        emailjs.send(
           import.meta.env.VITE_SERVICE_ID,
           import.meta.env.VITE_TEMPLATE_ID,
-          formData.current,
-          import.meta.env.VITE_PUBLIC_KEY
-        )
-        .then(
-          function (response) {
-            console.debug('SUCCESS!', response.status, response.text)
+          {
+            ...inputs
           },
-          function (error) {
-            console.debug('FAILED...', error)
-          }
+          import.meta.env.VITE_PUBLIC_KEY
         ),
-      {
-        loading: 'Loading',
-        success: 'Got the data',
-        error: 'Error when fetching'
-      }
-    )
+        {
+          loading: 'Loading',
+          success: 'Got the data',
+          error: 'Error when fetching'
+        }
+      )
+    } else {
+      toast('Fill all the fields', {
+        icon: '🚨'
+      })
+    }
   }
 
   return (
@@ -38,8 +47,8 @@ export default function Form(): JSX.Element {
         Fill this form
       </h2>
       <form
+        onChange={handleChange}
         onSubmit={handleSubmit}
-        ref={formData}
         className='flex flex-col justify-center self-center h-3/4 w-full gap-4 px-6 py-6 bg-white/primary rounded-xl shadow-2xl'>
         <div>
           <label
@@ -85,7 +94,11 @@ export default function Form(): JSX.Element {
         </div>
         <input
           type='submit'
-          className='mt-auto cursor-pointer self-center bg-blue/primary px-6  rounded-lg py-2 font-semibold text-white/primary transition-all ease-in-out'
+          className={`mt-auto cursor-pointer self-center bg-blue/primary ${
+            !inputs.name || !inputs.email || !inputs.phone
+              ? 'opacity-50 cursor-not-allowed'
+              : null
+          } px-6  rounded-lg py-2 font-semibold text-white/primary transition-all ease-in-out`}
           value={'Send'}
         />
       </form>
