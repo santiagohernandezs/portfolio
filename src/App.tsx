@@ -200,6 +200,7 @@ export default function App(): JSX.Element {
           </span>
           <Form />
         </div>
+
       </Section>
 
       <footer className='flex flex-col items-center justify-center min-h-[30vh] p-8 bg-blue/primary'>

@@ -1,27 +1,35 @@
 import emailjs from '@emailjs/browser'
 import { useRef } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function Form(): JSX.Element {
   const formData = useRef() as React.MutableRefObject<HTMLFormElement>
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: any): any => {
     e.preventDefault()
 
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        formData.current,
-        import.meta.env.VITE_PUBLIC_KEY
-      )
-      .then(
-        function (response) {
-          console.debug('SUCCESS!', response.status, response.text)
-        },
-        function (error) {
-          console.debug('FAILED...', error)
-        }
-      )
+    toast.promise(
+      emailjs
+        .sendForm(
+          import.meta.env.VITE_SERVICE_ID,
+          import.meta.env.VITE_TEMPLATE_ID,
+          formData.current,
+          import.meta.env.VITE_PUBLIC_KEY
+        )
+        .then(
+          function (response) {
+            console.debug('SUCCESS!', response.status, response.text)
+          },
+          function (error) {
+            console.debug('FAILED...', error)
+          }
+        ),
+      {
+        loading: 'Loading',
+        success: 'Got the data',
+        error: 'Error when fetching'
+      }
+    )
   }
 
   return (
@@ -77,10 +85,11 @@ export default function Form(): JSX.Element {
         </div>
         <input
           type='submit'
-          className='mt-auto self-center bg-blue/primary px-6  rounded-lg py-2 font-semibold text-white/primary transition-all ease-in-out'
+          className='mt-auto cursor-pointer self-center bg-blue/primary px-6  rounded-lg py-2 font-semibold text-white/primary transition-all ease-in-out'
           value={'Send'}
         />
       </form>
+      <Toaster position='bottom-right' gutter={8} />
     </div>
   )
 }
