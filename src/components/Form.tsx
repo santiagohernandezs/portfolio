@@ -16,10 +16,10 @@ export default function Form(): JSX.Element {
       )
       .then(
         function (response) {
-          console.log('SUCCESS!', response.status, response.text)
+          console.debug('SUCCESS!', response.status, response.text)
         },
         function (error) {
-          console.log('FAILED...', error)
+          console.debug('FAILED...', error)
         }
       )
   }
