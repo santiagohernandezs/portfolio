@@ -11,7 +11,7 @@ import {
   tao,
   turtle
 } from '@assets/index'
-import { Chevron, Github, Mail, Ticket, Twitter } from '@components/icons/index'
+import { Chevron, Github, Mail, Talk, Ticket, Twitter } from '@components/icons/index'
 import {
   Bubble,
   Form,
@@ -89,7 +89,7 @@ export default function App(): JSX.Element {
 
       <Section bgColor='blue/primary' gap={10} minHeight={30}>
         <Header text='About Me' color='white' icon={hand} alt='hand' />
-        <div className='grid -1 -2 tablet:grid-cols-3 tablet:grid-rows-2 gap-6 w-10/12  tablet:w-2/4'>
+        <div className='grid tablet:grid-cols-3 tablet:grid-rows-2 gap-6 w-10/12 items-center tablet:w-2/4'>
           <Bubble
             icon={figma}
             alt='figma'
@@ -97,15 +97,16 @@ export default function App(): JSX.Element {
             link='https://www.figma.com/@santiagohernand'
             rstart={1}
             primary
-            position='left'
+            position='right'
           />
+          <Talk viewBox={'0 0 243 89'} height={89} width={243} fill='#FFFFFF' />
           <Bubble
             link='https://discordapp.com/users/467156285327147018'
             icon={discord}
             alt='discord'
             text='If it’s related to code, I might like it. You can add me on Discord if you want to talk anything code related.'
             rstart={2}
-            position='right'
+            position='left'
           />
         </div>
       </Section>

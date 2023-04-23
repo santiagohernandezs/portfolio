@@ -9,7 +9,22 @@ import pockeball from './pokeball.svg';
 import rocket from './rocket.svg';
 import rounded from './rounded.svg';
 import turtle from './shell.svg';
+import talk from './talk.svg'
 import tao from './tao.svg';
 
-export { tao, rounded, hand, discord, figma, rocket, beemo, aria, coffee, turtle, pockeball, chart };
+export {
+  tao,
+  rounded,
+  hand,
+  talk,
+  discord,
+  figma,
+  rocket,
+  beemo,
+  aria,
+  coffee,
+  turtle,
+  pockeball,
+  chart
+}
 
