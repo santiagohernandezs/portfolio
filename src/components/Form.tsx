@@ -49,7 +49,7 @@ export default function Form(): JSX.Element {
       <form
         onChange={handleChange}
         onSubmit={handleSubmit}
-        className='flex flex-col justify-center self-center h-7/12 w-full desktop:h-3/4 gap-4 px-6 py-7 bg-white/primary rounded-xl shadow-2xl'>
+        className='flex flex-col justify-center self-center h-7/12 w-full desktop:h-6/5 gap-4 px-6 py-7 bg-white/primary rounded-xl shadow-2xl'>
         <div>
           <label
             className='text-xl font-semibold text-black/primary transition-colors ease-in'
