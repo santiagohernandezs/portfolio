@@ -191,16 +191,15 @@ export default function App(): JSX.Element {
         </span>
       </Section>
 
-      <Section bgColor='white/primary' gap={28} minHeight={30}>
+      <Section bgColor='white/primary' gap={28} minHeight={50}>
         <Header text="Let's Get in Touch" color='black' icon={hand} alt='hand' />
-        <div className='flex items-center justify-center w-10/12 tablet:w-3/4 gap-16 h-[50vh]'>
+        <div className='flex items-center justify-center w-10/12 tablet:w-3/4 gap-16 h-[60vh]'>
           <Ticket viewBox='0 0 1743 934' width={290} height={170} />
-          <span className='text-black/primary font-bold text-3xl hidden laptop:block'>
+          <span className='text-black/primary font-semibold text-3xl hidden laptop:block'>
             Or
           </span>
           <Form />
         </div>
-
       </Section>
 
       <footer className='flex flex-col items-center justify-center min-h-[30vh] p-8 bg-blue/primary'>

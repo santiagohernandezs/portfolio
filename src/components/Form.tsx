@@ -42,14 +42,14 @@ export default function Form(): JSX.Element {
   }
 
   return (
-    <div className='flex flex-col gap-4 w-10/12 laptop:w-2/6 h-full py-6'>
-      <h2 className='text-2xl self-center font-bold text-black/primary hidden laptop:block'>
+    <div className='flex flex-col gap-4 w-full bigPhone:w-10/12 laptop:w-2/6 h-full tabelt:h-[90%] py-10'>
+      <h2 className='text-2xl self-center font-semibold text-black/primary hidden laptop:block'>
         Fill this form
       </h2>
       <form
         onChange={handleChange}
         onSubmit={handleSubmit}
-        className='flex flex-col justify-center self-center h-3/4 w-full gap-4 px-6 py-6 bg-white/primary rounded-xl shadow-2xl'>
+        className='flex flex-col justify-center self-center h-7/12 w-full desktop:h-3/4 gap-4 px-6 py-7 bg-white/primary rounded-xl shadow-2xl'>
         <div>
           <label
             className='text-xl font-semibold text-black/primary transition-colors ease-in'
