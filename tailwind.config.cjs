@@ -24,8 +24,8 @@ module.exports = {
         goDown: 'goDown 1s ease-in-out infinite alternate'
       },
       screens: {
-        smallPhone: '320px',
-        bigPhone: '428px',
+        'mobile/m': '375px',
+        'mobile/l': '425px',
         tablet: '768px',
         laptop: '1024px',
         desktop: '1280px'
