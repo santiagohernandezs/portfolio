@@ -47,6 +47,10 @@ module.exports = {
           '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(10px)' }
         }
+      },
+      gridTemplateColumns: {
+        div: 'repeat(1, minmax(366px, 1fr))',
+        'div/lg': 'repeat(2, minmax(366px, 1fr))'
       }
     }
   },
